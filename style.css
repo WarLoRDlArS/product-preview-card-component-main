@@ -1,0 +1,75 @@
+/* .container{
+    display: grid;
+    grid-template-columns: [left-border] 1fr [content-start-vertical] 1.5fr [content-end-vertical] 1fr [right-border];
+    grid-template-rows: [top-border] 1fr [content-start-horizontal] 1.5 fr [content-end-horizontal] 1fr [bottom-border];
+    grid-template-areas: 
+            ". . ."
+            ". content-stuff ."
+            ". . ."
+    ;
+}
+
+.main-content{
+    grid-column: content-start-vertical / content-end-vertical ;
+    grid-row: content-start-horizontal / content-end-horizontal;
+}
+
+.sub-container{
+    display:grid;
+    grid-template:
+          content-top 1fr content-bottom
+          /
+          column1-start 1fr column1-end column2-start 1fr column2-end;
+}
+
+.image-container{
+    background-image: url('/images/image-product-desktop.jpg');
+    background-repeat: no-repeatm;
+    grid-column: column1-start / column1-end;
+    grid-row: content-top / content-bottom; 
+}
+
+.written-stuff{
+    grid-column: column2-start / column2-end;
+    grid-row: content-top / content-bottom; 
+} */
+
+.main-container{
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+    grid-template-rows: 25% 50% 25%;
+    grid-template-areas: 
+        ". . ."
+        ". content-stuff ."
+        ". . .";
+    place-items: center;
+}
+
+.main-content{
+    grid-area: content-stuff;
+    align-content: center;
+    justify-content: center;
+}
+
+.content-container{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+        "image-stuff written-stuff";
+}
+
+.image-container{
+    grid-area: image-stuff;
+}
+
+.written-container{
+    grid-area: written-stuff;
+    display: flex;/*make it grid*/
+    flex-flow: row wrap;
+}
+
+.addToCart{
+    background-color: hsl(158, 36%, 37%);
+    width: 100%;
+}
