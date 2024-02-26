@@ -1,54 +1,20 @@
-/* .container{
-    display: grid;
-    grid-template-columns: [left-border] 1fr [content-start-vertical] 1.5fr [content-end-vertical] 1fr [right-border];
-    grid-template-rows: [top-border] 1fr [content-start-horizontal] 1.5 fr [content-end-horizontal] 1fr [bottom-border];
-    grid-template-areas: 
-            ". . ."
-            ". content-stuff ."
-            ". . ."
-    ;
+body{
+    background-color: hsl(30, 38%, 92%);
 }
-
-.main-content{
-    grid-column: content-start-vertical / content-end-vertical ;
-    grid-row: content-start-horizontal / content-end-horizontal;
-}
-
-.sub-container{
-    display:grid;
-    grid-template:
-          content-top 1fr content-bottom
-          /
-          column1-start 1fr column1-end column2-start 1fr column2-end;
-}
-
-.image-container{
-    background-image: url('/images/image-product-desktop.jpg');
-    background-repeat: no-repeatm;
-    grid-column: column1-start / column1-end;
-    grid-row: content-top / content-bottom; 
-}
-
-.written-stuff{
-    grid-column: column2-start / column2-end;
-    grid-row: content-top / content-bottom; 
-} */
-
 .main-container{
     display: grid;
-    grid-template-columns: 30% 40% 30%;
+    grid-template-columns: 28.5% 43% 28.5%;
     grid-template-rows: 25% 50% 25%;
     grid-template-areas: 
         ". . ."
         ". content-stuff ."
-        ". . .";
-    place-items: center;
+        ". . ."; 
 }
 
 .main-content{
     grid-area: content-stuff;
-    align-content: center;
-    justify-content: center;
+    align-self: center;
+    justify-self: center;
 }
 
 .content-container{
@@ -60,16 +26,87 @@
 }
 
 .image-container{
-    grid-area: image-stuff;
+    grid-area: image-stuff; 
+}
+
+.image-content{
+    width: 100%; 
+    height: 100%; 
+    margin:0px; 
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
 .written-container{
     grid-area: written-stuff;
-    display: flex;/*make it grid*/
-    flex-flow: row wrap;
+    display: grid;
+    grid-template-rows:
+       3% [row1Start] 9% [row1end row2start] 28% [row2end row3start] 32% [row3end row4start] 11% [row4end row5start] 14% [row5end] 3%;
+    grid-template-columns: 7% [column1start] 52% [column1end column2start] 20% [column2end];
+    grid-template-areas: 
+        ". . ."
+        ". perfume perfume"
+        ". agabrie agabrie"
+        ". aflor aflor"
+        ". cost1 cost2"
+        ". addcart addcart"
+        ". . ."
+    ;
+    background-color: hsl(0, 0%, 100%);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.Perfume{
+    grid-area: perfume; 
+    align-self: center;
+    font-family: "Montserrat";
+    font-weight: 500;
+    letter-spacing: 5px;
+    font-size: .8em;
+    color: hsl(228, 12%, 48%);
+}
+
+.aGab{
+    grid-area:agabrie;
+    font-size: 1.7em;
+    align-self: center;
+    font-family: "Fraunces";
+    font-weight: 700;
+}
+
+.aFloral{
+    grid-area: aflor;
+    align-self: center;
+    color: hsl(228, 12%, 48%); 
+    font-family: "Fraunces";
+    font-size: .9em;
+}
+
+.acost1{
+    grid-area: cost1;
+    font-size: 2em;
+    color: hsl(158, 36%, 37%);
+    place-self: start;
+    align-self: center;
+}
+
+.acost2{
+    grid-area: cost2;
+    place-self: start;
+    align-self: center;
 }
 
 .addToCart{
     background-color: hsl(158, 36%, 37%);
-    width: 100%;
+    grid-area: addcart;
+    margin: 0px;
+    color: hsl(0, 0%, 100%);
+    border-radius: 7px; 
+    align-self: center;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    padding:10px;
 }
