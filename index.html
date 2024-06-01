@@ -20,11 +20,16 @@
 </head>
 
 <body>
+  <div class="to-make-card-center"></div>
   <section class="main-container"> 
     <section class="main-content content-container">
 
-      <section class="image-container">
-        <div><img class="image-content" src="images/image-product-desktop.jpg"></div>
+      <section class="image-container"> 
+        <picture>
+          <source srcset="images/image-product-desktop.jpg" media="(min-width: 1440px)" class="image-content">
+          <source srcset="images/image-product-mobile.jpg" media="(max-width: 1439px)" class="image-content">
+          <img srcset="images/image-product-desktop.jpg" alt="perfume image" class="image-content">
+        </picture> 
       </section>
 
       <section class="written-container">
@@ -52,11 +57,6 @@
     </section>
   </section>
 
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">WarLoRDlArS</a>.
-  </div> 
 </body>
 </html>
 

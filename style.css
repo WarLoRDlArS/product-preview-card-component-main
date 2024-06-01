@@ -1,112 +1,248 @@
 body{
     background-color: hsl(30, 38%, 92%);
 }
-.main-container{
-    display: grid;
-    grid-template-columns: 28.5% 43% 28.5%;
-    grid-template-rows: 25% 50% 25%;
-    grid-template-areas: 
-        ". . ."
-        ". content-stuff ."
-        ". . ."; 
+
+@media (min-width: 1440px){
+    .to-make-card-center{
+        height: 15vh;
+    }
+    .main-container{
+        display: grid;
+        grid-template-columns: 28.5% 43% 28.5%;
+        grid-template-rows: 25% 50% 25%;
+        grid-template-areas: 
+            ". . ."
+            ". content-stuff ."
+            ". . ."; 
+    }
+    
+    .main-content{
+        grid-area: content-stuff;
+        align-self: center;
+        justify-self: center;
+    }
+}
+@media (max-width: 1439px){
+    .main-container{
+        display:grid; 
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "content-stuff";
+        height:90vh;
+        width: 87vw; 
+        padding: 15px 10px 15px 10px;
+    } 
+ 
 }
 
-.main-content{
-    grid-area: content-stuff;
-    align-self: center;
-    justify-self: center;
+@media (min-width: 1440px){
+    .content-container{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 100%;
+        grid-template-areas: 
+            "image-stuff written-stuff";
+    }
+    
+    .image-container{
+        grid-area: image-stuff; 
+    }
+    
+    .image-content{
+        width: 100%; 
+        height: 100%; 
+        margin:0px; 
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
 }
 
-.content-container{
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 1fr;
-    grid-template-areas: 
-        "image-stuff written-stuff";
+@media (max-width: 1439px){
+    .content-container{
+        display: grid;
+        grid-template-rows: 35% 65%;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+           "image-stuff"
+           "written-stuff"
+        ;
+    } 
+
+    .image-content{
+        grid-area: image-stuff;
+        width: 100%; 
+        height: 100%; 
+        margin:0px; 
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
 }
 
-.image-container{
-    grid-area: image-stuff; 
+@media (min-width: 1440px){
+    .written-container{
+        grid-area: written-stuff;
+        display: grid;
+        grid-template-rows:
+           3% [row1Start] 9% [row1end row2start] 28% [row2end row3start] 32% [row3end row4start] 11% [row4end row5start] 14% [row5end] 3%;
+        grid-template-columns: 7% [column1start] 52% [column1end column2start] 20% [column2end];
+        grid-template-areas: 
+            ". . ."
+            ". perfume perfume"
+            ". agabrie agabrie"
+            ". aflor aflor"
+            ". cost1 cost2"
+            ". addcart addcart"
+            ". . ."
+        ;
+        background-color: hsl(0, 0%, 100%);
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    
+    .Perfume{
+        grid-area: perfume; 
+        align-self: center;
+        font-family: "Montserrat";
+        font-weight: 500;
+        letter-spacing: .3em;
+        font-size: .8em;
+        color: hsl(228, 12%, 48%);
+    }
+    
+    .aGab{
+        grid-area:agabrie;
+        font-size: 1.7em;
+        align-self: center;
+        font-family: "Fraunces";
+        font-weight: 700;
+    }
+    
+    .aFloral{
+        grid-area: aflor;
+        align-self: center;
+        color: hsl(228, 12%, 48%); 
+        font-family: "Fraunces";
+        font-size: .9em;
+    }
+    
+    .acost1{
+        grid-area: cost1;
+        font-size: 2em;
+        color: hsl(158, 36%, 37%);
+        place-self: start;
+        align-self: center;
+    }
+    
+    .acost2{
+        grid-area: cost2;
+        place-self: start;
+        align-self: center;
+        color: hsl(228, 12%, 48%);
+        font-size:1.2em;
+    }
+    
+    .addToCart{
+        background-color: hsl(158, 36%, 37%);
+        grid-area: addcart;
+        margin: 0px;
+        color: hsl(0, 0%, 100%);
+        border-radius: 7px; 
+        align-self: center;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        padding:10px;
+        font-size:1em;
+    }
 }
+ 
+@media (max-width: 1439px){
+    .written-container{
+        grid-area: written-stuff;
+        display: grid;
+        grid-template-rows:
+           3% [row1Start] 9% [row1end row2start] 28% [row2end row3start] 32% [row3end row4start] 11% [row4end row5start] 14% [row5end] 3%;
+        grid-template-columns: [column1start] 50% [column1end column2start] 50% [column2end];
+        grid-template-areas: 
+            ". ."
+            "perfume perfume"
+            "agabrie agabrie"
+            "aflor aflor"
+            "cost1 cost2"
+            "addcart addcart"
+            ". ."
+        ;
+        background-color: hsl(0, 0%, 100%);
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
 
-.image-content{
-    width: 100%; 
-    height: 100%; 
-    margin:0px; 
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-}
 
-.written-container{
-    grid-area: written-stuff;
-    display: grid;
-    grid-template-rows:
-       3% [row1Start] 9% [row1end row2start] 28% [row2end row3start] 32% [row3end row4start] 11% [row4end row5start] 14% [row5end] 3%;
-    grid-template-columns: 7% [column1start] 52% [column1end column2start] 20% [column2end];
-    grid-template-areas: 
-        ". . ."
-        ". perfume perfume"
-        ". agabrie agabrie"
-        ". aflor aflor"
-        ". cost1 cost2"
-        ". addcart addcart"
-        ". . ."
-    ;
-    background-color: hsl(0, 0%, 100%);
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-}
+    .Perfume{
+        grid-area: perfume; 
+        align-self: center;
+        font-family: "Montserrat";
+        font-weight: 500;
+        letter-spacing: .3em;
+        font-size: .8em;
+        color: hsl(228, 12%, 48%);
+        margin-left: 1.5em;
+        margin-right: 1.5em;
+    }
+    
+    .aGab{
+        grid-area:agabrie;
+        font-size: 2.5em;
+        align-self: center;
+        font-family: "Fraunces";
+        font-weight: 700;
+        margin-left: 1em;
+        margin-right: 1.5em;
+    }
+    
+    .aFloral{
+        grid-area: aflor;
+        align-self: center;
+        color: hsl(228, 12%, 48%); 
+        font-family: "Fraunces";
+        font-size: 1.2em;
 
-.Perfume{
-    grid-area: perfume; 
-    align-self: center;
-    font-family: "Montserrat";
-    font-weight: 500;
-    letter-spacing: 5px;
-    font-size: .8em;
-    color: hsl(228, 12%, 48%);
-}
-
-.aGab{
-    grid-area:agabrie;
-    font-size: 1.7em;
-    align-self: center;
-    font-family: "Fraunces";
-    font-weight: 700;
-}
-
-.aFloral{
-    grid-area: aflor;
-    align-self: center;
-    color: hsl(228, 12%, 48%); 
-    font-family: "Fraunces";
-    font-size: .9em;
-}
-
-.acost1{
-    grid-area: cost1;
-    font-size: 2em;
-    color: hsl(158, 36%, 37%);
-    place-self: start;
-    align-self: center;
-}
-
-.acost2{
-    grid-area: cost2;
-    place-self: start;
-    align-self: center;
-}
-
-.addToCart{
-    background-color: hsl(158, 36%, 37%);
-    grid-area: addcart;
-    margin: 0px;
-    color: hsl(0, 0%, 100%);
-    border-radius: 7px; 
-    align-self: center;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    padding:10px;
+        margin-left: 1.5em;
+        margin-right: 1.5em;
+    }
+    
+    .acost1{
+        grid-area: cost1;
+        font-size: 2.5em;
+        color: hsl(158, 36%, 37%);
+        place-self: start;
+        align-self: center;
+        margin-left:1em;
+    }
+    
+    .acost2{
+        grid-area: cost2;
+        place-self: start;
+        align-self: center;
+        color: hsl(228, 12%, 48%);
+        font-size: 1.2em;
+    }
+    
+    
+    .addToCart{
+        background-color: hsl(158, 36%, 37%);
+        grid-area: addcart;
+        margin: 0px;
+        color: hsl(0, 0%, 100%);
+        border-radius: 7px; 
+        align-self: center;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        padding:10px;
+        margin-left: 1.5em;
+        margin-right: 1.5em;
+    }
 }
